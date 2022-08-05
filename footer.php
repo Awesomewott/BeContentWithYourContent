@@ -1,8 +1,13 @@
-<br />
-<br />
-<br />
-<br />
-Footer - Copyright IDK 2022
+<br/>
+<br/>
+<br/>
+<hr/>
+
+
+<?php
+$CurrentYear = 2022;
+echo "My footer - Copyright me " . $CurrentYear;
+?>
 
 </body>
 </html>

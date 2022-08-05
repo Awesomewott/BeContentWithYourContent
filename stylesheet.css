@@ -1,0 +1,113 @@
+﻿ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+body {
+    background-color: #45494a;
+}
+th {
+    background-color: #003c66;
+    color: white;
+}
+
+table {
+    background-color: #313435;
+}
+
+li {
+    float: left;
+}
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+
+
+.p-div {
+    background-color: #333;
+}
+
+p {
+    color: white;
+}
+li a:hover {
+    background-color: #1481ba;
+}
+
+
+table {
+    margin: 0 auto;
+    font-size: large;
+    border: 1px solid black;
+    padding: 10px 10px 10px 10px;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: xx-large;
+    font-family: 'Gill Sans', 'Gill Sans MT', ' Calibri', 'Trebuchet MS', 'sans-serif';
+}
+
+td {
+    background-color: #435058;
+    border: 1px solid black;
+}
+
+th,
+td {
+    font-weight: bold;
+    border: 2px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+td {
+    font-weight: lighter;
+    color: white;
+}
+
+.admin_sec {
+    background-color: #313435;
+    padding: 10px;
+    margin: 5px;
+}
+
+.add_sec {
+    padding: 5px;
+    background-color: #435058;
+}
+
+.delete_btn{
+    color: black;
+    background-color: #ff1053;
+}
+
+.login_navbtn{
+    float: right;
+}
+.select_label {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.select_dropdown {
+    text-align: center;
+    text-decoration: none;
+}
+.details_btn {
+    margin: 5px;
+    background-color: #005fa3;
+    color: white;
+}

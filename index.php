@@ -20,52 +20,55 @@ include_once("includes.php");
         </section>
 
         <!--This is where the Gods will go to be displayed on the page-->
-        <section class="u-clearfix u-grey-80 u-section-2" id="sec-076a">
+        <section class="u-clearfix u-grey-70 u-section-2" id="sec-076a">
             <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
                 <h1 class="u-align-center u-custom-font u-font-ubuntu u-text u-text-default u-text-1">Gods</h1>
-                <div class="god_list u-expanded-width u-list u-list-1">
+                <div class="god_list u-expanded-width u-layout-grid u-list u-list-1">
                     <div class="u-repeater u-repeater-1">
-                        <div class="u-container-style u-list-item u-repeater-item u-video-cover u-white u-list-item-1">
+                        <!--Item 1-->
+                        <div class="u-container-style u-grey-80 u-list-item u-repeater-item u-video-cover u-list-item-1">
                             <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
                                 <h3 class="u-text u-text-default u-text-2">Achillies</h3>
-                                <div class="u-border-4 u-border-palette-3-base u-expanded-width u-line u-line-horizontal u-line-1"></div>
+                                <div class="u-border-4 u-border-palette-4-dark-1 u-expanded-width u-line u-line-horizontal u-line-1"></div>
                                 <img alt="" class="u-expanded-width u-image u-image-default u-image-1" data-image-width="1080" data-image-height="1920" src="images/Achilles-1080x1920.jpg" />
                                 <p class="u-text u-text-default u-text-3">
                                     <b>
                                         <i>"Dodge and punish your opponents before finding the right time to end them."</i>
                                     </b>
                                 </p>
-                                <a href="" class="u-border-2 u-border-grey-75 u-btn u-button-style u-hover-palette-3-light-1 u-palette-1-base u-btn-1">
+                                <a href="" class="u-border-2 u-border-grey-75 u-btn u-button-style u-hover-palette-1-dark-1 u-palette-4-dark-1 u-btn-1">
                                     Details<br />
                                 </a>
                             </div>
                         </div>
-                        <div class="u-container-style u-list-item u-repeater-item u-video-cover u-white u-list-item-2">
+                        <!--Item 2-->
+                        <div class="u-container-style u-grey-80 u-list-item u-repeater-item u-video-cover u-list-item-2">
                             <div class="u-container-layout u-similar-container u-valign-top u-container-layout-2">
                                 <h3 class="u-text u-text-default u-text-4">Angi</h3>
-                                <div class="u-border-4 u-border-palette-3-base u-expanded-width u-line u-line-horizontal u-line-2"></div>
+                                <div class="u-border-4 u-border-palette-4-dark-1 u-expanded-width u-line u-line-horizontal u-line-2"></div>
                                 <img alt="" class="u-expanded-width u-image u-image-default u-image-2" data-image-width="750" data-image-height="1000" src="images/d68a86c0eaa0e674d10d80082f2943ea.jpg" />
                                 <p class="u-text u-text-default u-text-5">
                                     <b>
                                         <i>"Rain down fire for major destruction. Lockdown enemies with noxious fumes."</i>
                                     </b>
                                 </p>
-                                <a href="" class="u-border-2 u-border-grey-75 u-btn u-button-style u-hover-palette-3-light-1 u-palette-1-base u-btn-2">
+                                <a href="" class="u-border-2 u-border-grey-75 u-btn u-button-style u-hover-palette-1-dark-1 u-palette-4-dark-1 u-btn-2">
                                     Details<br />
                                 </a>
                             </div>
                         </div>
-                        <div class="u-container-style u-list-item u-repeater-item u-video-cover u-white u-list-item-3">
+                        <!--Item 3-->
+                        <div class="u-container-style u-grey-80 u-list-item u-repeater-item u-video-cover u-list-item-3">
                             <div class="u-container-layout u-similar-container u-valign-top u-container-layout-3">
                                 <h3 class="u-text u-text-default u-text-6">Athena</h3>
-                                <div class="u-border-4 u-border-palette-3-base u-expanded-width u-line u-line-horizontal u-line-3"></div>
+                                <div class="u-border-4 u-border-palette-4-dark-1 u-expanded-width u-line u-line-horizontal u-line-3"></div>
                                 <img alt="" class="u-expanded-width u-image u-image-default u-image-3" data-image-width="750" data-image-height="1000" src="images/Athena-Smite2.jpg" />
                                 <p class="u-text u-text-default u-text-7">
                                     <b>
                                         <i>"Reach forward and taunt the opposition. Teleport and support your allies."</i>
                                     </b>
                                 </p>
-                                <a href="" class="u-border-2 u-border-grey-75 u-btn u-button-style u-hover-palette-3-light-1 u-palette-1-base u-btn-3">Details</a>
+                                <a href="" class="u-border-2 u-border-grey-75 u-btn u-button-style u-hover-palette-1-dark-1 u-palette-4-dark-1 u-btn-3">Details</a>
                             </div>
                         </div>
                     </div>
@@ -73,8 +76,10 @@ include_once("includes.php");
             </div>
         </section>
 
+
+
         <!--This is for the Admin to add items to the list above-->
-        <section class="u-clearfix u-grey-80 u-section-3" id="sec-0dd0">
+        <section class="u-clearfix u-grey-70 u-section-3" id="sec-0dd0">
             <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
                 <a href="https://nicepage.com/website-design" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-50 u-btn-1">
                     <span class="u-icon u-icon-1">

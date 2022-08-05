@@ -1,12 +1,5 @@
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="en">
-<head>
-    <?php
-    include_once("includes.php")
-    ?>
-
-</head>
-
 <!--Footer-->
 <footer class="u-align-center u-clearfix u-footer u-grey-75 u-footer" id="sec-1e31">
     <div class="u-clearfix u-sheet u-sheet-1">

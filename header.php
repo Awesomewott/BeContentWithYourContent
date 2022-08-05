@@ -1,10 +1,5 @@
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="en">
-<head>
-    <?php
-    include_once("includes.php");
-    ?>
-</head>
 <!--Navigation Bar-->
 <body data-home-page="Home.html" data-home-page-title="Home" class="u-body u-xl-mode" data-lang="en">
     <header class="u-clearfix u-grey-70 u-header u-header" id="sec-9975">

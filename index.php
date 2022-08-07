@@ -2,6 +2,7 @@
 include_once('dbh.inc.php');
 
 ob_start();
+session_start();
 include("header.php");
 $buffer=ob_get_contents();
 ob_end_clean();

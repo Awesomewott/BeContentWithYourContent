@@ -77,7 +77,11 @@ echo $buffer;
                     </td>
                     
                     <td>
-                        <button class="details_btn" id="details_btn" value="details">Details</button>
+                        <button class="details_btn" id="details_btn" name="id" value="details">
+                            
+                            <a href="details.php">Details</a>
+
+                        </button>
                         <button class="delete_btn" id="delete_btn" value="delete">Delete</button>
                     </td>
                 </tr>
@@ -142,7 +146,6 @@ echo $buffer;
 
     </section>
     
-  
 </body>
 </html>
 <?php

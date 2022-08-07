@@ -23,7 +23,7 @@ echo $buffer;
 
                 <tr>
                     <th>Id</th>
-                    <!--<th>Image</th>-->
+                    <th>Image</th>
                     <th>Name</th>
                     <th>Patheon</th>
                     <th>MeleeType</th>
@@ -45,9 +45,9 @@ echo $buffer;
                     <td>
                         <?php echo $rows['Id'];?>
                     </td>
-                    <!--<td>
-                        <?php //echo $rows['Image']?>
-                    </td>-->
+                    <td>
+                        <img src="data:image/jpeg;base64, <?php echo base64_encode( $rows['Image'] ); ?>" />
+                    </td>
                     <td>
                         <?php echo $rows['Name'];?>
                     </td>

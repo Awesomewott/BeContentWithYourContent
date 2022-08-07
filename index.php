@@ -78,7 +78,11 @@ echo $buffer;
                     </td>
                     
                     <td>
-                        <button class="details_btn" id="details_btn" value="details">Details</button>
+                        <button class="details_btn" id="details_btn" value="details">
+                            <a href="details.php?pid=<?php echo $rows['Id'];?>">
+                                Details
+                            </a>
+                        </button>
                         <button class="delete_btn" id="delete_btn" value="delete">Delete</button>
                     </td>
                 </tr>

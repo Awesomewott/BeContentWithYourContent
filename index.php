@@ -1,6 +1,7 @@
 <?php
 include_once('dbh.inc.php');
 
+
 ob_start();
 session_start();
 include("header.php");
@@ -36,6 +37,24 @@ echo $buffer;
                     <th>Quote</th>
                     <th>Action</th>
                 </tr>
+
+                <?php
+                include_once "dbConnector.php";
+
+                if (array_key_exists('Delete', $_POST)) {
+                    // Validate data
+
+                    if ((array_key_exists("Id", $_GET) == TRUE) ) {
+                        // Check key for Int (TODO)
+                        $dbConn = ConnGet();
+
+                        $rows = DeleteItem($dbConn, $_GET["Id"]);
+                        
+                        mysqli_close($myDbConn);
+                    }
+                }
+
+                ?>
 
                 <?php
                 while ($rows = $result->fetch_assoc())
@@ -79,11 +98,13 @@ echo $buffer;
                     
                     <td>
                         <button class="details_btn" id="details_btn" value="details">
-                            <a href="details.php?pid=<?php echo $rows['Id'];?>">
+                            <a class="details_btn_a" id="" href="details.php?pid=<?php echo $rows['Id'];?>">
                                 Details
                             </a>
-                        </button>
-                        <button class="delete_btn" id="delete_btn" value="delete">Delete</button>
+                            </button>                        
+                            <form method="post">
+                                <input type="submit" name="Delete" value="Delete"/>
+                            </form>
                     </td>
                 </tr>
                 <?php
@@ -93,13 +114,32 @@ echo $buffer;
         </section>
     </div>
 
+
+
+    <?php
+    include_once('dbconnector.php');
+
+    if (array_key_exists('Submit', $_POST)) {
+        // Validate data
+
+        if ((array_key_exists('Id', $_POST))  &&(array_key_exists('Name', $_POST))  && (array_key_exists('Patheon', $_POST))  && (array_key_exists('MeleeType', $_POST))  && (array_key_exists('PowerType', $_POST))  && (array_key_exists('Class', $_POST))  && (array_key_exists('Difficulty', $_POST)) && (array_key_exists('FavorCost', $_POST)) && (array_key_exists('GemsCost', $_POST))  && (array_key_exists('Quote', $_POST)) ) {
+            // Check key for Int (TODO)
+            $dbConn = ConnGet();
+
+            $rows = InsertItem($dbConn, $_POST["Id"],$_POST["Name"], $_POST["Patheon"], $_POST["MeleeType"], $_POST["PowerType"], $_POST["Class"], $_POST["Difficulty"], $_POST["FavorCost"], $_POST["GemsCost"], $_POST["Quote"]);
+
+            mysqli_close($dbConn);
+        }
+    }
+    ?>
+
     <section>
         <div class="admin_sec" id="admin_sec">
             <div class="add_sec" id="add_sec">
 
                 <form method="post">
                     <p>
-                        Image Address:
+                        Id:
                         <input type="text" name="Id" size="25" value="" />
                     </p>
                     <p>
@@ -132,7 +172,7 @@ echo $buffer;
                     </p>
                     <p>
                         Gems Cost:
-                        <input type="text" name="Gems Cost" size="25" value="" />
+                        <input type="text" name="GemsCost" size="25" value="" />
                     </p>
                     <p>
                         Quote:

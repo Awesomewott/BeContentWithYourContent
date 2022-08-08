@@ -122,3 +122,16 @@ input {
     background-color: #313435;
     color:white;
 }
+
+details_btn_a:link, a:visited {
+    background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+details_btn_a:hover, details_btn_a:active {
+    background-color: red;
+}

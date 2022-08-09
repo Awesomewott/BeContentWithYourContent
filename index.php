@@ -38,29 +38,11 @@ echo $buffer;
                     <th>Action</th>
                 </tr>
 
-                <?php
-                include_once "dbConnector.php";
-
-                if (array_key_exists('Delete', $_POST)) {
-                    // Validate data
-
-                    if ((array_key_exists("Id", $_GET) == TRUE) ) {
-                        // Check key for Int (TODO)
-                        $dbConn = ConnGet();
-
-                        $rows = DeleteItem($dbConn, $_GET["Id"]);
-                        
-                        mysqli_close($myDbConn);
-                    }
-                }
-
-                ?>
-
+     
                 <?php
                 while ($rows = $result->fetch_assoc())
                 {
                 ?>
-
                 <tr>
                     <td>
                         <?php echo $rows['Id'];?>
@@ -101,10 +83,13 @@ echo $buffer;
                             <a class="details_btn_a" id="" href="details.php?pid=<?php echo $rows['Id'];?>">
                                 Details
                             </a>
-                            </button>                        
-                            <form method="post">
-                                <input type="submit" name="Delete" value="Delete"/>
-                            </form>
+                            </button>  
+                        <button value="details">
+                            <a href="delete.php?pid=<?php echo $rows['Id'];?>">
+                                Delete
+                            </a>
+                        </button>
+                            
                     </td>
                 </tr>
                 <?php
@@ -114,15 +99,13 @@ echo $buffer;
         </section>
     </div>
 
-
-
     <?php
     include_once('dbconnector.php');
 
     if (array_key_exists('Submit', $_POST)) {
         // Validate data
 
-        if ((array_key_exists('Id', $_POST))  &&(array_key_exists('Name', $_POST))  && (array_key_exists('Patheon', $_POST))  && (array_key_exists('MeleeType', $_POST))  && (array_key_exists('PowerType', $_POST))  && (array_key_exists('Class', $_POST))  && (array_key_exists('Difficulty', $_POST)) && (array_key_exists('FavorCost', $_POST)) && (array_key_exists('GemsCost', $_POST))  && (array_key_exists('Quote', $_POST)) ) {
+        if ((array_key_exists('Id', $_POST))  &&(array_key_exists('Name', $_POST))  && (array_key_exists('Patheon', $_POST))  && (array_key_exists('MeleeType', $_POST))  && (array_key_exists('PowerType', $_POST))  && (array_key_exists('Class', $_POST))  && (array_key_exists('Difficulty', $_POST)) && (array_key_exists('FavorCost', $_POST)) && (array_key_exists('GemsCost', $_POST))  && (array_key_exists('Quote', $_POST))) {
             // Check key for Int (TODO)
             $dbConn = ConnGet();
 

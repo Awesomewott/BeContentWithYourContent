@@ -27,24 +27,15 @@ function GetSingleItem($dbConn, $Id)
 function DeleteItem($dbConn, $Id){
     //$sql = "DELETE FROM characters WHERE ".$Id;
 
-    $query = "DELETE FROM characters WHERE ".$Id;
+    $query = "DELETE FROM characters WHERE `characters`.`Id` = ".$Id;
 
-    $result = mysqli_query($dbConn, $query);
-    $rows = $dbConn->affected_rows;
+    $stmt = $dbConn->prepare($query);
 
-    if ($result == true) {
-
-        return $rows;
-    }
-    else  {
-        echo mysqli_error($dbConn);
-        return false;
-    }
+    $stmt->execute();
 
 }
 
-function InsertItem($dbConn, $Id,$Name, $Patheon, $MeleeType, $PowerType, $Class, $Difficulty, $FavorCost, $GemsCost, $Quote){
-    //$sql = "INSERT INTO characters(Id, Name, Patheon, MeleeType, PowerType, Class, Difficulty, FavorCost, GemsCost, Quote) VALUES (0,".$Name.",".$Patheon.",".$MeleeType.",".$PowerType.",".$Class.",".$Difficulty.",".$FavorCost.",".$GemsCost.",".$Quote.")";
+function InsertItem($dbConn, $Id, $Name, $Patheon, $MeleeType, $PowerType, $Class, $Difficulty, $FavorCost, $GemsCost, $Quote){
 
     $sql = "INSERT INTO characters (Id, Name, Patheon, MeleeType, PowerType, Class, Difficulty, FavorCost, GemsCost, Quote) VALUES (?,?,?,?,?,?,?,?,?,?)";
 
@@ -63,6 +54,15 @@ function InsertItem($dbConn, $Id,$Name, $Patheon, $MeleeType, $PowerType, $Class
     mysqli_stmt_close($prep);
 
     return $affected_rows;
+}
+
+function MyCellUpdate($dbConn, $Name, $Patheon, $MeleeType, $PowerType, $Class, $Difficulty, $FavorCost, $GemsCost, $Quote, $pId) {
+
+    $query = "UPDATE `characters` SET `Name`='$Name',`Patheon`='$Patheon',`MeleeType`='$MeleeType',`PowerType`='$PowerType',`Class`='$Class',`Difficulty`='$Difficulty',`FavorCost`='$FavorCost',`GemsCost`='$GemsCost',`Quote`='$Quote' WHERE `characters`.`Id` = ".$pId;
+
+    $stmt = $dbConn->prepare($query);
+
+    $stmt->execute();
 }
 
 ?>

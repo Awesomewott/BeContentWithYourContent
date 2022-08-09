@@ -6,7 +6,7 @@ $dbUsername = "root";
 
 $dbPass = "";
 
-$dbName = "mobaholder";
+$dbName = "MobaHolder";
 
 $conn = mysqli_connect($servername, $dbUsername, $dbPass, $dbName, 3306);
 

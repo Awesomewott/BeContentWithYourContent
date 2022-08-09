@@ -8,13 +8,13 @@ $dbPass = "";
 
 $dbName = "mobaholder";
 
-$conn = mysqli_connect($servername, $dbUsername, $dbPass, $dbName, 3306);
+//$conn = mysqli_connect($servername, $dbUsername, $dbPass, $dbName, 3306);
 
 $sql = "SELECT * FROM characters";
 
-$result = $conn->query($sql);
+//$result = $conn->query($sql);
 
-$conn->close();
+//$conn->close();
 
 ?>
 

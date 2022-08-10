@@ -57,7 +57,7 @@ if (array_key_exists('Submit', $_POST)) {
 <section>
     <div class="admin_sec" id="admin_sec">
         <div class="add_sec" id="add_sec">
-
+            <h3 style="color: white">Edit Current Item:</h3>
             <form method="post">
                 <p>
                     Name:
@@ -96,7 +96,7 @@ if (array_key_exists('Submit', $_POST)) {
                     <input type="text" name="Quote" size="25" value="" />
                 </p>
                 <p>
-                    <input type="submit" name="Submit" value="Add" />
+                    <input type="submit" name="Submit" value="Edit" />
                 </p>
             </form>
         </div>

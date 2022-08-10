@@ -1,56 +1,12 @@
 <?php
-
 ob_start();
 session_start();
 include("header.php");
 $buffer=ob_get_contents();
 ob_end_clean();
 
-$buffer=str_replace("%TITLE%","Details", $buffer);
+$buffer=str_replace("%TITLE%","Add", $buffer);
 echo $buffer;
-
-include_once "dbconnector.php";
-
-//$myJSON = "";
-$myGet = "";
-$row = null;
-
-
-//Gets the Single Item
-if (array_key_exists("pid", $_GET) == TRUE)
-{
-    $dbconn = ConnGet();
-
-    $myGet = $_GET["pid"];
-
-    $dataSet = GetSingleItem($dbconn, $myGet);
-
-    if ($dataSet){
-        if($row = mysqli_fetch_array($dataSet)) {
-            $myJSON = "Name: ".$row['Name']. "</br>Patheon: ".$row['Patheon']. "</br>Melee Type: ".$row['MeleeType']."</br>Power Type: ".$row['PowerType']. "</br>Class: ".$row['Class']."</br>Difficulty: ".$row['Difficulty']. "</br>Favor Cost: ".$row['FavorCost']. "</br>Gems Cost: ".$row['GemsCost']. "</br>Quote: ".$row['Quote'];
-        };
-    };
-    mysqli_close($dbconn);
-}
-echo $myJSON;
-?>
-
-<?php
-include_once "dbconnector.php";
-//Updates Selected Item
-if (array_key_exists('Submit', $_POST)) {
-    // Validate data
-
-    if ((array_key_exists('Name', $_POST))&& (array_key_exists('Image', $_POST))  && (array_key_exists('Patheon', $_POST))  && (array_key_exists('MeleeType', $_POST))  && (array_key_exists('PowerType', $_POST))  && (array_key_exists('Class', $_POST))  && (array_key_exists('Difficulty', $_POST)) && (array_key_exists('FavorCost', $_POST)) && (array_key_exists('GemsCost', $_POST))  && (array_key_exists('Quote', $_POST))) {
-
-        $dbConn = ConnGet();
-        $myGet = $_GET["pid"];
-
-        $rows = MyCellUpdate($dbConn, $_POST["Name"],$_POST["Image"], $_POST["Patheon"], $_POST["MeleeType"], $_POST["PowerType"], $_POST["Class"], $_POST["Difficulty"], $_POST["FavorCost"], $_POST["GemsCost"], $_POST["Quote"], $myGet);
-
-        mysqli_close($dbConn);
-    }
-}
 
 ?>
 
@@ -59,6 +15,10 @@ if (array_key_exists('Submit', $_POST)) {
         <div class="add_sec" id="add_sec">
 
             <form method="post">
+                <p>
+                    Image:
+                    <input type="file" id="myFile" name="Image" />
+                </p>
                 <p>
                     Name:
                     <input type="text" name="Name" size="25" value="" />
@@ -98,11 +58,31 @@ if (array_key_exists('Submit', $_POST)) {
                 <p>
                     <input type="submit" name="Submit" value="Add" />
                 </p>
+                <br />
+                <br />
+                <p>
+                    <a href="index.php">return to homepage</a>
+                </p>
             </form>
         </div>
     </div>
 </section>
 
 <?php
-include_once 'footer.php';
+include_once('dbconnector.php');
+
+if (array_key_exists('Submit', $_POST)) {
+    // Validate data
+
+    if ((array_key_exists('Name', $_POST)) && (array_key_exists('Image', $_POST))  && (array_key_exists('Patheon', $_POST))  && (array_key_exists('MeleeType', $_POST))  && (array_key_exists('PowerType', $_POST))  && (array_key_exists('Class', $_POST))  && (array_key_exists('Difficulty', $_POST)) && (array_key_exists('FavorCost', $_POST)) && (array_key_exists('GemsCost', $_POST))  && (array_key_exists('Quote', $_POST))) {
+        // Check key for Int (TODO)
+        $dbConn = ConnGet();
+
+        $rows = InsertItem($dbConn, $_POST["Id"],$_POST["Name"],$_POST['Image'], $_POST["Patheon"], $_POST["MeleeType"], $_POST["PowerType"], $_POST["Class"], $_POST["Difficulty"], $_POST["FavorCost"], $_POST["GemsCost"], $_POST["Quote"]);
+
+        echo "Added To Home.";
+
+        mysqli_close($dbConn);
+    }
+}
 ?>

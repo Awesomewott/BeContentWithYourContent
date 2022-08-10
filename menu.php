@@ -1,8 +1,6 @@
 
 <div class=navbar>
     <a href=index.php>Home</a>
-    <a href=login.php>Login</a>
-    <a href=list.php>List</a>
   <div class=dropdown>
     <button class=dropbtn>About
       <i class=fa fa-caret-down></i>
@@ -22,6 +20,7 @@
     </div>
   </div>
     <button onclick=toggleTheme()>Switch</button>
+    <a href=login.php style="float:right">Login</a>
 </div>
 
 

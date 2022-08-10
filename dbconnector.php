@@ -1,9 +1,9 @@
 
 <?php
 DEFINE ('DB_USER', 'root');
-DEFINE ('DB_PSWD', 'test');
-DEFINE ('DB_SERVER', 'pi@pi-CMundy');
-DEFINE ('DB_NAME', 'mobaholder');
+DEFINE ('DB_PSWD', '');
+DEFINE ('DB_SERVER', 'localhost');
+DEFINE ('DB_NAME', 'smiteholder');
 
 // ///////////////////////////////////////////////////
 // Get db connection
@@ -35,9 +35,9 @@ function DeleteItem($dbConn, $Id){
 
 }
 
-function InsertItem($dbConn, $Id, $Name, $Patheon, $MeleeType, $PowerType, $Class, $Difficulty, $FavorCost, $GemsCost, $Quote){
+function InsertItem($dbConn, $Id, $Name, $Image, $Patheon, $MeleeType, $PowerType, $Class, $Difficulty, $FavorCost, $GemsCost, $Quote){
 
-    $sql = "INSERT INTO characters (Id, Name, Patheon, MeleeType, PowerType, Class, Difficulty, FavorCost, GemsCost, Quote) VALUES (?,?,?,?,?,?,?,?,?,?)";
+    $sql = "INSERT INTO characters (Id, Name, Image, Patheon, MeleeType, PowerType, Class, Difficulty, FavorCost, GemsCost, Quote) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 
     $prep = mysqli_prepare($dbConn, $sql);
 
@@ -46,7 +46,7 @@ function InsertItem($dbConn, $Id, $Name, $Patheon, $MeleeType, $PowerType, $Clas
     //    d Doubles
     //    b Blobs
     //    s Everything Else
-    mysqli_stmt_bind_param($prep, "issssssiis", $Id, $Name, $Patheon, $MeleeType, $PowerType, $Class, $Difficulty, $FavorCost, $GemsCost, $Quote);
+    mysqli_stmt_bind_param($prep, "isbsssssiis", $Id, $Name, $Image, $Patheon, $MeleeType, $PowerType, $Class, $Difficulty, $FavorCost, $GemsCost, $Quote);
 
     mysqli_stmt_execute($prep);
 
@@ -56,9 +56,9 @@ function InsertItem($dbConn, $Id, $Name, $Patheon, $MeleeType, $PowerType, $Clas
     return $affected_rows;
 }
 
-function MyCellUpdate($dbConn, $Name, $Patheon, $MeleeType, $PowerType, $Class, $Difficulty, $FavorCost, $GemsCost, $Quote, $pId) {
+function MyCellUpdate($dbConn, $Name, $Image, $Patheon, $MeleeType, $PowerType, $Class, $Difficulty, $FavorCost, $GemsCost, $Quote, $pId) {
 
-    $query = "UPDATE `characters` SET `Name`='$Name',`Patheon`='$Patheon',`MeleeType`='$MeleeType',`PowerType`='$PowerType',`Class`='$Class',`Difficulty`='$Difficulty',`FavorCost`='$FavorCost',`GemsCost`='$GemsCost',`Quote`='$Quote' WHERE `characters`.`Id` = ".$pId;
+    $query = "UPDATE `characters` SET `Name`='$Name', `Image`='$Image',`Patheon`='$Patheon',`MeleeType`='$MeleeType',`PowerType`='$PowerType',`Class`='$Class',`Difficulty`='$Difficulty',`FavorCost`='$FavorCost',`GemsCost`='$GemsCost',`Quote`='$Quote' WHERE `characters`.`Id` = ".$pId;
 
     $stmt = $dbConn->prepare($query);
 

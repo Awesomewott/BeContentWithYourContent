@@ -6,7 +6,7 @@ $dbUsername = "phpa";
 
 $dbPass = "test";
 
-$dbName = "mobaholder";
+$dbName = "smiteholder";
 
 $conn = mysqli_connect($servername, $dbUsername, $dbPass, $dbName, 3306);
 

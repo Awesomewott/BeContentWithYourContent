@@ -19,6 +19,7 @@
     </div>
   </div>
     <button onclick=toggleTheme()>Switch</button>
+    <label style="float:right">Welcome <?php echo $_SESSION['username']; ?></label>
     <a href=login.php style="float:right">Login</a>
 </div>
 

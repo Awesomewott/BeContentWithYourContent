@@ -38,7 +38,7 @@ li {
 }
 
 p {
-    color: red;
+    color: black;
 }
 
 li a:hover {
@@ -75,7 +75,7 @@ td {
 
 td {
     font-weight: lighter;
-    color: red;
+    color: black;
 }
 
 .admin_sec {

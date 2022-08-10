@@ -71,7 +71,7 @@ if($_SESSION['username'] == "Dave" || $_SESSION['valid'] == true){
 ?>
 <form method="post">
 
-    <h2>Admin Login</h2>
+    <h2>Login Page</h2>
     <br/>
     <?php echo $ErrorMessage ?>
     <br/>

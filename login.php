@@ -26,7 +26,8 @@ function redirect() {
     die();
 }
 
-$User = "Dave";
+$AdminUser = "Dave";
+$User = "Jeb";
 $Pass = "test123";
 
 $Input1 = $_POST["Username"];
@@ -37,10 +38,16 @@ $ErrorMessage = "";
 
 if(array_key_exists("SubmitButton", $_POST))
 {
-    if($Input1 == $User && $Input2 == $Pass){
+    if($Input1 == $AdminUser && $Input2 == $Pass){
         $_SESSION['valid'] = true;
         $_SESSION['timeout'] = time();
         $_SESSION['username'] = 'Dave';
+        redirect();
+    }
+    else if($Input1 == $User && $Input2 == $Pass){
+        $_SESSION['valid'] = true;
+        $_SESSION['timeout'] = time();
+        $_SESSION['username'] = 'Jeb';
         redirect();
     }
     else{
@@ -56,7 +63,9 @@ if(array_key_exists("Logout", $_POST)){
 }
 
 if($_SESSION['username'] == "Dave" || $_SESSION['valid'] == true){
-    $ErrorMessage = "Congrats, your logged in";
+    $ErrorMessage = "Congrats, your logged in as Admin";
+}else if($_SESSION['username'] == "Jeb" || $_SESSION['valid'] == true){
+    $ErrorMessage = "Congrats, your logged in as User";
 }
 
 ?>

@@ -85,21 +85,32 @@ echo $buffer;
                                 Details
                             </a>
                             </button>  
+                        <?php 
+                        if($_SESSION['username'] == 'Dave'){
+                        ?>
                         <button value="details">
                             <a href="delete.php?pid=<?php echo $rows['Id'];?>">
                                 Delete
                             </a>
                         </button>
-                            
+                        <?php 
+                        };
+                        ?>
                     </td>
                 </tr>
                 <?php
                 };
                 ?>
             </table>
+            <?php
+            if($_SESSION['username'] == 'Dave'){
+            ?>
             <button style="float:right; margin-top: 20px">
                 <a href="AddItem.php">Add Item</a>
             </button>
+            <?php
+            };
+            ?>
         </section>
     </div>
 

@@ -1,9 +1,9 @@
 
 <?php
-DEFINE ('DB_USER', 'root');
-DEFINE ('DB_PSWD', '');
-DEFINE ('DB_SERVER', 'localhost');
-DEFINE ('DB_NAME', 'smiteholder');
+DEFINE ('DB_USER', 'phpa');
+DEFINE ('DB_PSWD', 'test');
+DEFINE ('DB_SERVER', '169.254.134.179');
+DEFINE ('DB_NAME', 'MobaHolder');
 
 // ///////////////////////////////////////////////////
 // Get db connection

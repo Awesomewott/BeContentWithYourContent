@@ -1,10 +1,10 @@
 <?php
 
-$servername = "pi@pi-CMundy";
+$servername = "localhost";
 
-$dbUsername = "phpa";
+$dbUsername = "root";
 
-$dbPass = "test";
+$dbPass = "";
 
 $dbName = "smiteholder";
 

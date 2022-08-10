@@ -1,4 +1,3 @@
-
 <div class=navbar>
     <a href=index.php>Home</a>
   <div class=dropdown>

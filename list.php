@@ -32,32 +32,32 @@ if (array_key_exists("pid", $_GET) == TRUE)
     };
     mysqli_close($dbconn);
 }
-echo $myJSON;
+    echo $myJSON;
 ?>
 
 <?php
 include_once "dbconnector.php";
 //Updates Selected Item
-if (array_key_exists('Submit', $_POST)) {
-    // Validate data
+    if (array_key_exists('Submit', $_POST)) {
+        // Validate data
 
-    if ((array_key_exists('Name', $_POST))&& (array_key_exists('Image', $_POST))  && (array_key_exists('Patheon', $_POST))  && (array_key_exists('MeleeType', $_POST))  && (array_key_exists('PowerType', $_POST))  && (array_key_exists('Class', $_POST))  && (array_key_exists('Difficulty', $_POST)) && (array_key_exists('FavorCost', $_POST)) && (array_key_exists('GemsCost', $_POST))  && (array_key_exists('Quote', $_POST))) {
+        if ((array_key_exists('Name', $_POST))  && (array_key_exists('Patheon', $_POST))  && (array_key_exists('MeleeType', $_POST))  && (array_key_exists('PowerType', $_POST))  && (array_key_exists('Class', $_POST))  && (array_key_exists('Difficulty', $_POST)) && (array_key_exists('FavorCost', $_POST)) && (array_key_exists('GemsCost', $_POST))  && (array_key_exists('Quote', $_POST))) {
 
-        $dbConn = ConnGet();
-        $myGet = $_GET["pid"];
+            $dbConn = ConnGet();
+            $myGet = $_GET["pid"];
 
-        $rows = MyCellUpdate($dbConn, $_POST["Name"],$_POST["Image"], $_POST["Patheon"], $_POST["MeleeType"], $_POST["PowerType"], $_POST["Class"], $_POST["Difficulty"], $_POST["FavorCost"], $_POST["GemsCost"], $_POST["Quote"], $myGet);
+            $rows = MyCellUpdate($dbConn, $_POST["Name"], $_POST["Patheon"], $_POST["MeleeType"], $_POST["PowerType"], $_POST["Class"], $_POST["Difficulty"], $_POST["FavorCost"], $_POST["GemsCost"], $_POST["Quote"], $myGet);
 
-        mysqli_close($dbConn);
+            mysqli_close($dbConn);
+        }
     }
-}
 
 ?>
 
 <section>
     <div class="admin_sec" id="admin_sec">
         <div class="add_sec" id="add_sec">
-            <h3 style="color: white">Edit Current Item:</h3>
+
             <form method="post">
                 <p>
                     Name:
@@ -96,7 +96,10 @@ if (array_key_exists('Submit', $_POST)) {
                     <input type="text" name="Quote" size="25" value="" />
                 </p>
                 <p>
-                    <input type="submit" name="Submit" value="Edit" />
+                    <input type="submit" name="Submit" value="Add" />
+                </p>
+                <p>
+                    <input type="submit" name="delete" value="Delete" />
                 </p>
             </form>
         </div>

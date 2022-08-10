@@ -6,11 +6,11 @@ $dbUsername = "root";
 
 $dbPass = "";
 
-$dbName = "MobaHolder";
+$dbName = "smiteholder";
 
 $conn = mysqli_connect($servername, $dbUsername, $dbPass, $dbName, 3306);
 
-$sql = "SELECT * FROM characters;";
+$sql = "SELECT * FROM characters";
 
 $result = $conn->query($sql);
 

@@ -6,9 +6,8 @@ include("header.php");
 $buffer=ob_get_contents();
 ob_end_clean();
 
-$buffer=str_replace("%TITLE%","About", $buffer);
+$buffer=str_replace("%TITLE%","Location", $buffer);
 echo $buffer;
 ?>
-<?php
-    echo 'Hello About'
-?>
+
+<h3>We are located in the U.S.A.</h3>

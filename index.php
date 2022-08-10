@@ -1,7 +1,9 @@
 <?php
 include_once('dbh.inc.php');
 
+
 ob_start();
+session_start();
 include("header.php");
 $buffer=ob_get_contents();
 ob_end_clean();
@@ -36,17 +38,18 @@ echo $buffer;
                     <th>Action</th>
                 </tr>
 
+     
                 <?php
                 while ($rows = $result->fetch_assoc())
                 {
                 ?>
-
                 <tr>
                     <td>
                         <?php echo $rows['Id'];?>
                     </td>
                     <td>
                         <img src="data:image/jpeg;base64, <?php echo base64_encode( $rows['Image'] ); ?>" />
+                        
                     </td>
                     <td>
                         <?php echo $rows['Name'];?>
@@ -77,75 +80,40 @@ echo $buffer;
                     </td>
                     
                     <td>
-                        <button class="details_btn" id="details_btn" name="id" value="details">
-                            
-                            <a href="details.php">Details</a>
-
+                        <button class="details_btn" id="details_btn" value="details">
+                            <a class="details_btn_a" id="" href="details.php?pid=<?php echo $rows['Id'];?>">
+                                Details
+                            </a>
+                            </button>  
+                        <?php 
+                        if($_SESSION['username'] == 'Dave'){
+                        ?>
+                        <button value="details">
+                            <a href="delete.php?pid=<?php echo $rows['Id'];?>">
+                                Delete
+                            </a>
                         </button>
-                        <button class="delete_btn" id="delete_btn" value="delete">Delete</button>
+                        <?php 
+                        };
+                        ?>
                     </td>
                 </tr>
                 <?php
                 };
                 ?>
             </table>
+            <?php
+            if($_SESSION['username'] == 'Dave'){
+            ?>
+            <button style="float:right; margin-top: 20px">
+                <a href="AddItem.php">Add Item</a>
+            </button>
+            <?php
+            };
+            ?>
         </section>
     </div>
 
-    <section>
-        <div class="admin_sec" id="admin_sec">
-            <div class="add_sec" id="add_sec">
-
-                <form method="post">
-                    <p>
-                        Image Address:
-                        <input type="text" name="Id" size="25" value="" />
-                    </p>
-                    <p>
-                        Name:
-                        <input type="text" name="Name" size="25" value="" />
-                    </p>
-                    <p>
-                        Patheon:
-                        <input type="text" name="Patheon" size="25" value="" />
-                    </p>
-                    <p>
-                        Melee Type:
-                        <input type="text" name="MeleeType" size="25" value="" />
-                    </p>
-                    <p>
-                        Power Type:
-                        <input type="text" name="PowerType" size="25" value="" />
-                    </p>
-                    <p>
-                        Class:
-                        <input type="text" name="Class" size="25" value="" />
-                    </p>
-                    <p>
-                        Difficulty:
-                        <input type="text" name="Difficulty" size="25" value="" />
-                    </p>
-                    <p>
-                        Favor Cost:
-                        <input type="text" name="FavorCost" size="25" value="" />
-                    </p>
-                    <p>
-                        Gems Cost:
-                        <input type="text" name="Gems Cost" size="25" value="" />
-                    </p>
-                    <p>
-                        Quote:
-                        <input type="text" name="Quote" size="25" value="" />
-                    </p>
-                    <p>
-                        <input type="submit" name="Submit" value="Add" />
-                    </p>
-                </form>
-            </div>
-        </div>
-
-    </section>
-    
 </body>
 </html>
 <?php

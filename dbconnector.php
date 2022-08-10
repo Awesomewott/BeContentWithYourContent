@@ -1,8 +1,8 @@
 
 <?php
 DEFINE ('DB_USER', 'root');
-DEFINE ('DB_PSWD', '');
-DEFINE ('DB_SERVER', 'localhost');
+DEFINE ('DB_PSWD', 'test');
+DEFINE ('DB_SERVER', 'pi@pi-CMundy');
 DEFINE ('DB_NAME', 'mobaholder');
 
 // ///////////////////////////////////////////////////

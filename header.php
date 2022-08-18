@@ -31,7 +31,7 @@ include_once "menu.php"
     }
 </script>
 
-<h1>Smite Library Website - %TITLE%</h1>
+<h1>Smite Library Website - %TITLE%</h1>                                                                                                        
 </html>
 
 
